@@ -1,0 +1,40 @@
+<!-- This is going to be the exact same base.html and I can redefine block title 
+ within the curly brackets such as the home -->
+<!-- home.html -->
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1>CryptoMoodPrediction</h1>
+  <form id="prediction-form">
+    <label for="interaction_count">Interaction Count:</label>
+    <input
+      type="number"
+      id="interaction_count"
+      name="interaction_count"
+      placeholder="Enter interaction count"
+      required
+    />
+
+    <label for="streak_count">Streak Count:</label>
+    <input
+      type="number"
+      id="streak_count"
+      name="streak_count"
+      placeholder="Enter streak count"
+      required
+    />
+
+    <label for="volatility_score">Volatility Score:</label>
+    <input
+      type="number"
+      step="0.01"
+      id="volatility_score"
+      name="volatility_score"
+      placeholder="Enter volatility score"
+      required
+    />
+
+    <button type="submit">Predict</button>
+  </form>
+  <div id="result"></div>
+</div>
+{% endblock %}

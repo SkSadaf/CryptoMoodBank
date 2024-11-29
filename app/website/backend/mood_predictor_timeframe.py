@@ -1,0 +1,37 @@
+def predict_earnings(balance, time_frame, mood_choices):
+    mood_percentages = {"Happy": 0.05, "Sad": 0.02, "Neutral": 0.03}
+
+    # Initialize variables
+    total_earnings = 0
+    current_balance = balance
+
+    # Iterate over the mood choices
+    for day in range(time_frame):
+
+        mood = mood_choices[day % len(mood_choices)].strip().title()
+        if mood not in mood_percentages:
+            raise ValueError(f"Invalid mood choice: {mood}. Choose from Happy, Sad, or Neutral.")
+
+        daily_earning = current_balance * mood_percentages[mood]
+        total_earnings += daily_earning
+        current_balance += daily_earning  # Update balance for compounding effect
+
+    return total_earnings, current_balance
+
+
+if __name__ == "__main__":
+    # Input: Initial balance, time frame, and mood choices
+    initial_balance = float(input("Enter your initial Aura Coin balance: "))
+    days = int(input("Enter the number of days for the prediction: "))
+    print("Enter mood choices for each day (e.g., Happy, Sad, Neutral).")
+    mood_inputs = input("Separate moods with commas (e.g., Happy, Sad, Neutral): ").split(",")
+
+
+    try:
+        earnings, final_balance = predict_earnings(initial_balance, days, mood_inputs)
+
+        print("\nPrediction Results:")
+        print(f"Total Earnings Over {days} Days: {earnings:.2f} Aura Coins")
+        print(f"Final Balance After {days} Days: {final_balance:.2f} Aura Coins")
+    except ValueError as e:
+        print(f"Error: {e}")
