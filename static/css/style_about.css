@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
 .sec-1 {
   margin-top: 58px;
   position: relative;
@@ -29,48 +31,57 @@
 .head01,
 .p1 {
   position: relative;
-  z-index: 2; /* Ensure text is above the background */
+  z-index: 2;
 }
 .head01 {
-  filter: none;
   color: white;
   font-size: 39px;
   font-weight: 600;
   font-family: "Monoton";
 }
 .p1 {
-  filter: none;
   line-height: normal;
   padding: 0px 20px;
   color: white;
   font-size: 20px;
   font-family: "Roboto";
 }
-.card_1 {
-  background-color: #eef7fe;
+.cardsWarpper {
+  background-color: #2b2b2b;
+  height: 1000px;
+  text-align: center;
+}
+hr {
+  color: #deab5f;
+  width: 600px;
+  margin: 3em auto;
+}
+.card1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  /* margin-left: 7em;
+  padding-top: 3em; */
 }
-.sec-2 {
-  width: 20em;
-  height: 20em;
-  margin-left: 7em;
-  padding-top: 3em;
+.card1Text {
+  width: 30em;
+  /* height: 20em; */
+  margin-top: 3em;
 }
 .head02 {
-  color: #6f3bee;
+  text-decoration: underline;
+  color: #fff;
 }
 .p2 {
-  color: black;
+  padding-top: 15px;
+  color: grey;
+}
+.card1Img {
+  margin-top: 1em;
 }
 .img1 {
-  height: 180px;
+  height: 200px;
   width: 200px;
-  border-radius: 90px;
-  margin-top: 20px;
-}
-.imgSection {
-  margin-top: 30px;
-  margin-right: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
 }
