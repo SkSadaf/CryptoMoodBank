@@ -90,6 +90,7 @@ form {
   background-color: #0066cc;
   border-radius: 50%;
   transition: 0.5s;
+  cursor: pointer;
 }
 .moodOption:checked ~ .emoji {
   background-color: #6dcc00;
