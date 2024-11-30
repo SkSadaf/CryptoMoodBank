@@ -1,4 +1,86 @@
-.hello {
-  margin-top: 68px;
-  color: blueviolet;
+/* login-page */
+.signupContainer {
+  background-image: url("https://w0.peakpx.com/wallpaper/425/381/HD-wallpaper-lo-fi-landscape-colorful-sunrise.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.signupWarpper {
+  background-color: transparent;
+  text-align: center;
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(3px);
+  padding: 50px;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+}
+.signupText {
+  color: #ffffff;
+  padding-bottom: 30px;
+  font-size: 35px;
+  padding-left: 11px;
+}
+.forgotPassword {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-size: 12px;
+  text-decoration: none;
+  justify-self: left;
+  padding-left: 1em;
+}
+.emailText,
+.passwordText,
+.usernameText {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  justify-self: left;
+  padding-left: 1em;
+  text-align: start;
+}
+
+input {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #ffffff;
+  padding: 7px 18px;
+  display: block;
+  margin: 0 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+.submit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.signupPassText {
+  color: #fff;
+  font-size: 14px;
+  padding: 7px;
+}
+.signupBtn {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 35px;
+  width: 100%;
+  background-color: rgb(62, 58, 58);
+  color: #fff;
+  padding: 10px 22px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+.signupBtn:hover {
+  transition: 0.6s;
+  color: #fff;
+  background-color: #000786;
 }

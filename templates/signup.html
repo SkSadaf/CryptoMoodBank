@@ -5,12 +5,28 @@
   />
 </head>
 
-{% extends "base.html" %}{% block content %}
+{% extends "base.html" %} {% block content %}
+<!-- login -->
 
-<!-- nav-bar -->
-
-<!-- Signup -->
-
-<h1 class="hello">hello</h1>
+<div class="signupContainer">
+  <div class="signupWarpper">
+    <h1 class="signupText">SIGN UP</h1>
+    <form action="/signup" method="POST">
+      <p for="username" class="usernameText">Username</p>
+      <input type="text" id="username" name="username" required />
+      <p for="email" class="emailText">Email</p>
+      <input type="email" id="email" name="email" required />
+      <p for="password" class="passwordText">Password</p>
+      <input
+        type="password"
+        id="password"
+        minlength="6"
+        name="password"
+        required
+      />
+      <button class="signupBtn hov" type="submit">Register</button>
+    </form>
+  </div>
+</div>
 
 {% endblock %}

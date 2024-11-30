@@ -38,9 +38,13 @@ li a:hover {
   border-radius: 25px;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  margin: 0;
-  padding: 0;
+/* footer */
+
+footer {
+  text-align: center;
+  background-color: #2b2b2b;
+  padding: 1rem 0;
+}
+p {
+  color: #fff;
 }

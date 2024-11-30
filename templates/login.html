@@ -11,14 +11,15 @@
 <div class="loginContainer">
   <div class="loginWarpper">
     <h1 class="loginText">LOG IN</h1>
-    <form action="submit">
+    <form action="/login" method="POST">
       <p class="emailText">Email</p>
       <input type="email" name="email" required />
       <p class="passwordText">Password</p>
-      <input type="password" name="password" minlength="8" required />
+      <input type="password" name="password" minlength="6" required />
       <a href="#" class="forgotPassword">Forgot Password?</a>
       <button class="loginBtn hov" type="submit">Log In</button>
     </form>
   </div>
 </div>
+
 {% endblock %}

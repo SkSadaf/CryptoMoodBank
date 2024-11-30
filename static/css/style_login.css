@@ -14,7 +14,7 @@
 }
 .loginWarpper {
   background-color: transparent;
-  text-align: left;
+  text-align: center;
   -webkit-backdrop-filter: blur(0px);
   backdrop-filter: blur(3px);
   padding: 50px;
@@ -36,6 +36,7 @@
   text-decoration: none;
   justify-self: left;
   padding-left: 1em;
+  text-align: start;
 }
 .emailText,
 .passwordText {
@@ -44,6 +45,7 @@
   font-size: 15px;
   justify-self: left;
   padding-left: 1em;
+  text-align: start;
 }
 
 input {
