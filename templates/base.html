@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CryptoMoodPrediction</title>
+    <title>CryptoMoodBank</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style_base.css') }}"
@@ -13,18 +13,30 @@
     <nav>
       <h1 class="logo">Logo</h1>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/login" class="active">Login</a></li>
-        <li><a href="/signup">Signup</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/mood">Mood</a></li>
+        <li class="navLinkContainer">
+          <a class="navLink" class="active" href="/">Home</a>
+        </li>
+        <li class="navLinkContainer">
+          <a class="navLink" href="/login">Login</a>
+        </li>
+        <li class="navLinkContainer">
+          <a class="navLink" href="/signup">Signup</a>
+        </li>
+        <li class="navLinkContainer">
+          <a class="navLink" href="/about">About</a>
+        </li>
+        <li class="navLinkContainer">
+          <a class="navLink" href="/mood">Mood</a>
+        </li>
       </ul>
     </nav>
     {% block content %} {% endblock %}
     <footer>
-      <p>&copy; 2024 CryptoMoodBank. All rights reserved.</p>
+      <p class="copyText">&copy; 2024 CryptoMoodBank. All rights reserved.</p>
       <a href="/privacy">Privacy Policy</a> |
       <a href="/terms">Terms of Service</a>
     </footer>
+
+    <script src="/static/js/scripts.js" defer></script>
   </body>
 </html>

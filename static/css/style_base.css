@@ -21,19 +21,19 @@ nav {
   border: 5px;
 }
 
-li {
+.navLinkContainer {
   display: inline;
   list-style: none;
 }
 
-li a {
+.navLink {
   color: #fff;
   text-decoration: none;
   margin-left: 40px;
   padding: 12px 16px;
 }
 
-li a:hover {
+.navLink:hover {
   background-color: #333;
   border-radius: 25px;
 }
@@ -45,6 +45,6 @@ footer {
   background-color: #2b2b2b;
   padding: 1rem 0;
 }
-p {
+.copyText {
   color: #fff;
 }
