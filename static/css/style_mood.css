@@ -1,22 +1,3 @@
-/* General Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Arial", sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-h1,
-h2 {
-  color: #333;
-  font-weight: 600;
-}
-
 /* Mood Container */
 .moodContainer {
   max-width: 900px;
