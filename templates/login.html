@@ -1,26 +1,16 @@
-{% extends "base.html" %} {% block content %}
-<!-- <nav>
-  <h1 class="logo">Logo</h1>
-  <ul>
-    <li><a href="#" class="active">Home</a></li>
-    <li><a href="login.html">login</a></li>
-    <li><a href="base.html">signup</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav> -->
+<head>
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/style_login.css') }}"
+  />
+</head>
 
-<div class="container3">
+{% extends "base.html" %} {% block content %}
+<!-- login -->
+
+<div class="loginContainer">
   <div class="loginWarpper">
-    <h1
-      style="
-        color: rgba(255, 255, 255, 0.666);
-        padding-bottom: 30px;
-        font-size: 35px;
-        padding-left: 11px;
-      "
-    >
-      LOG IN
-    </h1>
+    <h1 class="loginText">LOG IN</h1>
     <form action="submit">
       <p class="emailText">Email</p>
       <input type="email" name="email" required />

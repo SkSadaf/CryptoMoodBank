@@ -1,51 +1,79 @@
 <!-- This is going to be the exact same base.html and I can redefine block title 
  within the curly brackets such as the home -->
 <!-- home.html -->
+<head>
+  <!-- <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/style_home.css') }}"
+  /> -->
+  <link rel="stylesheet" href="/static/css/style_home.css" />
+</head>
 {% extends "base.html" %} {% block content %}
 
-<nav>
-  <h1 class="logo">Logo</h1>
+<header class="hero">
+  <h1>CryptoMoodBank</h1>
+  <p>Your Mood. Your Crypto. Your Rewards.</p>
+  <div class="cta-buttons">
+    <a href="/login" class="btn">Get Started</a>
+    <a href="/about" class="btn btn-secondary">Learn More</a>
+  </div>
+</header>
+
+<section id="about">
+  <h2>What is CryptoMoodBank?</h2>
+  <p>
+    CryptoMoodBank transforms how you manage your emotions by integrating
+    mood-based analysis with gamified crypto rewards. It's more than a
+    platform—it's your personal journey to emotional growth and financial
+    engagement.
+  </p>
+</section>
+
+<section id="features">
+  <h2>Why You'll Love CryptoMoodBank</h2>
   <ul>
-    <li><a href="#" class="active">Home</a></li>
-    <li><a href="{{ url_for('login') }}">Login</a></li>
-    <li><a href="#">signup</a></li>
-    <li><a href="#">Contact</a></li>
+    <li>
+      <strong>Mood Insights:</strong> Understand your emotional patterns with
+      AI-driven analysis.
+    </li>
+    <li>
+      <strong>Crypto Rewards:</strong> Watch your Aura Coins grow with your
+      streaks and interactions.
+    </li>
+    <li>
+      <strong>Daily Challenges:</strong> Engage in fun activities to maintain
+      emotional well-being and earn more.
+    </li>
   </ul>
-</nav>
+</section>
 
-<div class="container">
-  <h1>CryptoMoodPrediction</h1>
-  <form id="prediction-form">
-    <label for="interaction_count">Interaction Count:</label>
-    <input
-      type="number"
-      id="interaction_count"
-      name="interaction_count"
-      placeholder="Enter interaction count"
-      required
-    />
+<section id="how-it-works">
+  <h2>How CryptoMoodBank Works</h2>
+  <ol>
+    <li><strong>Sign Up:</strong> Create your free account.</li>
+    <li>
+      <strong>Track Your Mood:</strong> Share your emotions; we’ll do the rest.
+    </li>
+    <li>
+      <strong>Earn Rewards:</strong> Grow your Aura Coins daily through
+      mood-based activities.
+    </li>
+  </ol>
+</section>
 
-    <label for="streak_count">Streak Count:</label>
-    <input
-      type="number"
-      id="streak_count"
-      name="streak_count"
-      placeholder="Enter streak count"
-      required
-    />
+<section id="testimonials">
+  <h2>What Users Are Saying</h2>
+  <blockquote>
+    "CryptoMoodBank keeps me motivated and helps me stay positive!"
+  </blockquote>
+  <blockquote>
+    "I never thought tracking my emotions could be so rewarding."
+  </blockquote>
+</section>
 
-    <label for="volatility_score">Volatility Score:</label>
-    <input
-      type="number"
-      step="0.01"
-      id="volatility_score"
-      name="volatility_score"
-      placeholder="Enter volatility score"
-      required
-    />
+<footer>
+  <p>&copy; 2024 CryptoMoodBank. All rights reserved.</p>
+  <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
+</footer>
 
-    <button type="submit">Predict</button>
-  </form>
-  <div id="result"></div>
-</div>
 {% endblock %}

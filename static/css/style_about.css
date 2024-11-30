@@ -1,0 +1,76 @@
+.sec-1 {
+  margin-top: 58px;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.sec-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(70%);
+  z-index: 1;
+}
+
+.head01,
+.p1 {
+  position: relative;
+  z-index: 2; /* Ensure text is above the background */
+}
+.head01 {
+  filter: none;
+  color: white;
+  font-size: 39px;
+  font-weight: 600;
+  font-family: "Monoton";
+}
+.p1 {
+  filter: none;
+  line-height: normal;
+  padding: 0px 20px;
+  color: white;
+  font-size: 20px;
+  font-family: "Roboto";
+}
+.card_1 {
+  background-color: #eef7fe;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.sec-2 {
+  width: 20em;
+  height: 20em;
+  margin-left: 7em;
+  padding-top: 3em;
+}
+.head02 {
+  color: #6f3bee;
+}
+.p2 {
+  color: black;
+}
+.img1 {
+  height: 180px;
+  width: 200px;
+  border-radius: 90px;
+  margin-top: 20px;
+}
+.imgSection {
+  margin-top: 30px;
+  margin-right: 50px;
+}
