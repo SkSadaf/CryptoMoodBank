@@ -3,7 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import os
 import random
+import pickle
 from werkzeug.security import generate_password_hash, check_password_hash
+
+# Load the trained model
+model = pickle.load(open('mood_predictor_model.pkl', 'rb'))
 
 # Initialize the Flask app and the database
 app = Flask(__name__)
@@ -34,9 +38,21 @@ class Mood(db.Model):
     date = db.Column(db.Date, nullable=False, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Foreign key to User
     reward = db.Column(db.Integer, nullable=False)
+    score = db.Column(db.Float, nullable=True)  # Add this line for the score attribute
 
     def __repr__(self):
-        return f"Mood('{self.user_id}', '{self.mood}', '{self.date}', '{self.reward}')"
+        return f"Mood('{self.user_id}', '{self.mood}', '{self.date}', '{self.reward}', '{self.score}')"
+
+# Function to predict the mood score
+def predict_score(happy_mood, sad_mood, neutral_mood, weekend, hours_of_sleep):
+    # Load the trained model
+    with open('mood_predictor_model.pkl', 'rb') as f:
+        model = pickle.load(f)
+
+    # Prepare the input for prediction (5 features as expected by the model)
+    features = [[happy_mood, sad_mood, neutral_mood, weekend, hours_of_sleep]]
+    return model.predict(features)[0]  # Return the predicted label (1 or 0)
+
 
 # Route for the home page
 @app.route('/')
@@ -67,38 +83,59 @@ def login():
 def logout():
     session.pop('user_id', None)  # Remove the user_id from session
     return redirect(url_for('index'))  # Redirect to home page
-
-# Route for mood tracking (logged-in users only)
 @app.route('/mood', methods=['GET', 'POST'])
 def mood_tracking():
     user_id = session.get('user_id')  # Get the logged-in user's ID from session
 
-    # If user_id is not found (i.e., user is not logged in), redirect to login page
     if user_id is None:
         flash("Please log in first.", "danger")
         return redirect(url_for('login'))  # Redirect to login page
 
+    # Initialize prediction_result as None initially
+    prediction_result = None
+
     if request.method == 'POST':
+        # Extract form inputs
         mood = request.form['mood']  # Get mood from form
         date = datetime.today().date()  # Get today's date
+        happy_mood = int(request.form.get('happy_mood', 0))
+        sad_mood = int(request.form.get('sad_mood', 0))
+        neutral_mood = int(request.form.get('neutral_mood', 0))
+        weekend = int(request.form.get('weekend', 0))
+        hours_of_sleep = int(request.form.get('hours_of_sleep', 0))
 
-        # Assign a random coin reward based on mood
+        # Assign a reward and calculate a score using the ML model
         reward = random.randint(5, 20)
+        prediction = predict_score(happy_mood, sad_mood, neutral_mood, weekend, hours_of_sleep)
+        prediction_result = "Improving Mood" if prediction == 1 else "Worsening Mood"
 
         # Create a new Mood record
-        new_mood = Mood(user_id=user_id, mood=mood, date=date, reward=reward)
+        new_mood = Mood(user_id=user_id, mood=mood, date=date, reward=reward, score=prediction)
         db.session.add(new_mood)
         db.session.commit()  # Save to database
 
-        return redirect('/mood')  # Redirect back to the mood page to see the updated list
-    
+        # Store the prediction result in session
+        session['prediction_result'] = prediction_result
+
+        # Redirect to render the page with the prediction result
+        return redirect(url_for('mood_tracking'))
+
     # Fetch all moods of the logged-in user
     moods = Mood.query.filter_by(user_id=user_id).order_by(Mood.date.desc()).all()
 
     # Calculate total rewards for the month
     total_rewards = sum([m.reward for m in moods])
 
-    return render_template("mood.html", moods=moods, total_rewards=total_rewards)
+    # Get the prediction from session
+    prediction_result = session.get('prediction_result', None)
+
+    # Render the template with all necessary variables
+    return render_template(
+        "mood.html", 
+        moods=moods, 
+        total_rewards=total_rewards, 
+        prediction_result=prediction_result
+    )
 
 # Route for user signup
 @app.route('/signup', methods=['GET', 'POST'])
@@ -130,4 +167,4 @@ def about():
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()  # Create all tables if they don't exist
-    app.run(debug=True, host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=8000)
