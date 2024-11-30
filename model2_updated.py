@@ -1,60 +1,69 @@
-import pandas as pd
-import numpy as np
+# 
+
+from flask import Flask, request, jsonify , render_template
 import random
 
-# Function to simulate random coin rewards
+app = Flask(__name__)
+
+@app.route('/mood')
+def mood():
+   return render_template("mood.html", data = "")
+
+# Data storage (in memory for simplicity)
+moods = []
+rewards = []
+days_in_month = 30
+
+# Function to generate random coin rewards
 def generate_random_rewards():
     return random.randint(5, 20)
 
-# Function to log daily mood and calculate weekly/monthly stats
-def mood_tracker():
-    print("\nWelcome to the Mood Tracker!")
-    days_in_month = 30
-    moods = []  # Stores the user's mood for each day
-    rewards = []  # Stores weekly coin rewards
+# API to submit mood
+@app.route('/submit_mood', methods=['POST'])
+def submit_mood():
+    global moods
+    mood = request.json.get('mood')
+    if mood not in ["happy", "sad", "neutral"]:
+        return jsonify({"error": "Invalid mood"}), 400
 
-    # Daily mood input for a month
-    for day in range(1, days_in_month + 1):
-        while True:
-            mood = input(f"Enter your mood for Day {day} (Happy/Sad/Neutral): ").strip().lower()
-            if mood in ["happy", "sad", "neutral"]:
-                moods.append(mood)
-                break
-            else:
-                print("Invalid input! Please enter 'Happy', 'Sad', or 'Neutral'.")
+    if len(moods) < days_in_month:
+        moods.append(mood)
+        if len(moods) % 7 == 0 or len(moods) == days_in_month:
+            return jsonify({"message": "Mood added, stats updated!", "updateStats": True}), 200
+        return jsonify({"message": "Mood added!"}), 200
+    return jsonify({"error": "Mood tracking complete for the month"}), 400
 
-    # Convert moods to a DataFrame
-    mood_data = pd.DataFrame({
-        'Day': list(range(1, days_in_month + 1)),
-        'Mood': moods
-    })
+# API to get stats
+@app.route('/get_stats', methods=['GET'])
+def get_stats():
+    global moods, rewards
+    weekly_rewards = []
+    mood_counts = {"happy": 0, "sad": 0, "neutral": 0}
+    stats = {"weekly": [], "monthly": {}, "total_rewards": 0}
 
-    # Calculate weekly stats and assign coin rewards
-    for week in range(4):
-        start_day = week * 7
-        end_day = start_day + 7
+    for i, mood in enumerate(moods):
+        mood_counts[mood] += 1
 
-        weekly_moods = mood_data.iloc[start_day:end_day]
-        happy_days = weekly_moods[weekly_moods['Mood'] == 'happy'].shape[0]
-        sad_days = weekly_moods[weekly_moods['Mood'] == 'sad'].shape[0]
-        neutral_days = weekly_moods[weekly_moods['Mood'] == 'neutral'].shape[0]
+        if (i + 1) % 7 == 0 or i + 1 == len(moods):
+            week_number = len(stats["weekly"]) + 1
+            reward = generate_random_rewards()
+            weekly_rewards.append(reward)
 
-        print(f"\nStats for Week {week + 1}:")
-        print(f"  Happy Days: {happy_days}")
-        print(f"  Sad Days: {sad_days}")
-        print(f"  Neutral Days: {neutral_days}")
-
-        # Assign random coin reward for the week
-        weekly_reward = generate_random_rewards()
-        rewards.append(weekly_reward)
-        print(f"  Coin Reward: {weekly_reward} coins")
+            stats["weekly"].append({
+                "week": week_number,
+                "happy": mood_counts["happy"],
+                "sad": mood_counts["sad"],
+                "neutral": mood_counts["neutral"],
+                "reward": reward
+            })
+            mood_counts = {"happy": 0, "sad": 0, "neutral": 0}
 
     # Monthly stats
-    print("\nMonthly Stats:")
-    print(mood_data['Mood'].value_counts())
+    for mood in moods:
+        stats["monthly"][mood] = stats["monthly"].get(mood, 0) + 1
 
-    total_rewards = sum(rewards)
-    print(f"Total Coin Rewards for the Month: {total_rewards} coins")
+    stats["total_rewards"] = sum(weekly_rewards)
+    return jsonify(stats)
 
-# Run the mood tracker
-mood_tracker()
+if __name__ == '__main__':
+    app.run(debug=True)
