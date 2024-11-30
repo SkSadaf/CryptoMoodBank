@@ -1,0 +1,35 @@
+<head>
+    <title>Mood Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_mood.css') }}"/>
+</head>
+
+{% extends "base.html" %} {% block content %}
+    <!-- Input mood through form -->
+
+
+    <div class="moodContainer">
+        <div class="moodwrapper">
+            <h1 class="moodtitle">Select Your Mood</h1>
+            <p>How are you feeling today?</p>
+            <form id="moodForm">
+                <label for="mood">Enter your mood for today:</label>
+                <select id="mood" name="mood">
+                    <option value="happy">Happy</option>
+                    <option value="sad">Sad</option>
+                    <option value="neutral">Neutral</option>
+                </select>
+                <button type="button" onclick="addMood()">Add Mood</button>
+            </form>
+        </div>
+
+        <div id="stats">
+            <h2 class="statstitle">Weekly Stats</h2>
+            <div id="weeklyStats"></div>
+            <h2 class="statstitle">Monthly Stats</h2>
+            <div id="monthlyStats"></div>
+            <h2 class="statstitle">Total Coin Rewards for the Month</h2>
+            <div id="totalRewards"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='mood/mood.js') }}"></script>
+{% endblock %}
