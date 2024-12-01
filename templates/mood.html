@@ -9,7 +9,7 @@
 
 <div class="moodContainer">
   <h1 class="moodtitle">Select Your Mood</h1>
-  <p>How are you feeling today?</p>
+  <p class="moodtext">How are you feeling today?</p>
   <form method="POST" action="/mood">
     <div class="emojiContainer">
       <label>
@@ -68,7 +68,9 @@
     </form>
 
     <!-- Display predicted mental state -->
-    <h2>Your Predicted Mental State: {{ prediction_result }}</h2>
+    <h2 class="predictedMental">
+      Your Predicted Mental State: {{ prediction_result }}
+    </h2>
   </form>
 </div>
 {% endblock %}
