@@ -1,3 +1,8 @@
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .login {
   font-size: 1.3em;
   border-top-left-radius: 50px;
@@ -24,9 +29,13 @@
 
 /* main-body */
 .hero {
-  margin-top: 58px;
+  /* margin-top: 58px; */
   position: relative;
+
+  padding: 0 50px;
   height: 100vh;
+  width: 100vw;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,11 +59,16 @@
   overflow: hidden;
   filter: brightness(80%);
 }
+.video-background video {
+  height: 100%;
+  width: 100vw;
+  object-fit: cover;
+}
 
 .hero-content {
   z-index: 1;
-  margin-top: -100px;
-  line-height: 6em;
+  /* margin-top: -100px; */
+  /* line-height: 6em; */
 }
 
 .welText {
@@ -187,15 +201,67 @@ p {
 }
 
 .CryptoMoodBankInfo {
-  display: flex;
-  justify-content: space-around;
+  /* display: flex;
+  justify-content: space-around; */
+  display: grid;
+  gap: 50px;
+  /* padding: 20px; */
+  width: 100vw;
+  margin: 0 !important;
+  padding: 50px;
+}
+
+@media (min-width: 768px) {
+  .CryptoMoodBankInfo {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .CryptoMoodBankInfo {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .welText {
+    font-size: 38px;
+  }
+
+  .typing {
+    font-size: 30px;
+  }
+
+  .scrollContainer {
+    margin-left: 13rem;
+  }
+
+  .load,
+  .log {
+    font-size: 20px;
+  }
 }
 
 .about {
+  padding: 50px;
+  padding-bottom: 0;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.about-content {
+  margin: 0 !important;
   background-color: #006466;
   transition: 0.35s;
 }
-.about:hover,
+
+.about-content:hover,
 .features:hover,
 .how-it-works:hover {
   transform: scale(1.08);
@@ -204,8 +270,11 @@ p {
 .features,
 .how-it-works {
   transition: 0.35s;
-  margin: 2em;
+  /* margin: 2em; */
   background-color: #006466;
+  margin: 0 !important;
+  /* width: 100vw; */
+  overflow: hidden;
 }
 .testimonials h2 {
   font-size: 2.3rem;
@@ -220,7 +289,6 @@ blockquote {
   max-width: 600px;
   color: #f1f1f1;
   border-radius: 8px;
-  animation: fadeIn 2s ease;
 }
 @keyframes fadeIn {
   0% {
@@ -231,4 +299,9 @@ blockquote {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.testimonials {
+  width: 100vw;
+  margin: 0 !important;
 }
