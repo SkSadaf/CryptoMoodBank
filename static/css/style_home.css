@@ -1,3 +1,26 @@
+.login {
+  font-size: 1.3em;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 5px;
+  color: #fff;
+  background-color: blue;
+  padding: 10px 18px;
+  position: fixed;
+  bottom: 8rem;
+  right: 0;
+  z-index: 99999;
+  border: 2px solid #fff;
+}
+.login a {
+  text-decoration: none;
+  color: inherit;
+}
+.login:hover {
+  background-color: #0000ab;
+}
+
 /* main-body */
 .hero {
   margin-top: 58px;
@@ -12,9 +35,6 @@
   overflow: hidden;
 }
 
-.scroll {
-  /* display: inline; */
-}
 .scrollContainer {
   position: absolute;
 }
@@ -139,17 +159,11 @@
 }
 
 section {
+  margin: 20px 20rem 3rem 20rem;
   padding: 4rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, #3a3a3a, #121212);
-  margin-bottom: 3rem;
   color: white;
   border-radius: 10px;
-  transition: background-color 0.3s ease;
-}
-
-section:hover {
-  background-color: #2f2f2f;
 }
 
 h2 {
@@ -170,31 +184,26 @@ p {
   animation: fadeIn 2s ease;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  font-size: 1.2rem;
-  color: #d1d1d1;
+.CryptoMoodBankInfo {
+  display: flex;
+  justify-content: space-around;
 }
 
-ul li {
-  margin: 10px 0;
-  padding-left: 20px;
-  position: relative;
+.about {
+  background-color: #006466;
+  transition: 0.35s;
+}
+.about:hover,
+.features:hover,
+.how-it-works:hover {
+  transform: scale(1.08);
 }
 
-ul li:before {
-  content: "✓";
-  color: #956afa;
-  position: absolute;
-  left: 0;
-}
-
-ol {
-  font-size: 1.2rem;
-  line-height: 2;
-  color: #d1d1d1;
-  padding-left: 20px;
+.features,
+.how-it-works {
+  transition: 0.35s;
+  margin: 2em;
+  background-color: #006466;
 }
 
 blockquote {
@@ -222,86 +231,5 @@ blockquote p {
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-#about {
-  background-color: #272727;
-}
-
-#features {
-  background-color: #3e3e3e;
-}
-
-#how-it-works {
-  background-color: #2f2f2f;
-}
-
-#testimonials {
-  background-color: #1d1d1d;
-}
-
-/* Hover Effects */
-a.btn {
-  background-color: #956afa;
-  color: white;
-  padding: 12px 25px;
-  font-size: 1.1rem;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-a.btn:hover {
-  background-color: #6a3eeb;
-}
-
-a.btn-secondary {
-  background-color: transparent;
-  border: 2px solid #956afa;
-  color: #956afa;
-  padding: 12px 25px;
-  font-size: 1.1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-a.btn-secondary:hover {
-  background-color: #956afa;
-  color: white;
-}
-
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-  .hero-content {
-    margin-top: 0;
-  }
-
-  .welText {
-    font-size: 45px;
-  }
-
-  .typing {
-    font-size: 50px;
-  }
-
-  .scroll {
-    font-size: 1.5rem;
-  }
-
-  .scrollContainer {
-    margin-left: 10rem;
-  }
-
-  section {
-    padding: 2rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  blockquote {
-    font-size: 1.2rem;
   }
 }
