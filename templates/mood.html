@@ -8,69 +8,76 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="moodContainer">
-  <h1 class="moodtitle">Select Your Mood</h1>
-  <p class="moodtext">How are you feeling today?</p>
-  <form method="POST" action="/mood">
-    <div class="emojiContainer">
-      <label>
-        <input type="radio" name="mood" value="happy" class="moodOption" />
-        <div class="emoji">😊</div>
-      </label>
-      <label>
-        <input type="radio" name="mood" value="sad" class="moodOption" />
-        <div class="emoji">😞</div>
-      </label>
-      <label>
-        <input type="radio" name="mood" value="neutral" class="moodOption" />
-        <div class="emoji">😐</div>
-      </label>
-      <label>
-        <input type="radio" name="mood" value="excited" class="moodOption" />
-        <div class="emoji">😄</div>
-      </label>
-      <label>
-        <input type="radio" name="mood" value="surprised" class="moodOption" />
-        <div class="emoji">😲</div>
-      </label>
-    </div>
+  <div class="moodWarpper">
+    <h1 class="moodtitle">Select Your Mood</h1>
+    <p class="moodtext">How are you feeling today?</p>
     <form method="POST" action="/mood">
-      <input
-        type="number"
-        name="happy_mood"
-        placeholder="Happy Mood (1 or 0)"
-        required
-      />
-      <input
-        type="number"
-        name="sad_mood"
-        placeholder="Sad Mood (1 or 0)"
-        required
-      />
-      <input
-        type="number"
-        name="neutral_mood"
-        placeholder="Neutral Mood (1 or 0)"
-        required
-      />
-      <input
-        type="number"
-        name="weekend"
-        placeholder="Weekend (1 or 0)"
-        required
-      />
-      <input
-        type="number"
-        name="hours_of_sleep"
-        placeholder="Hours of Sleep"
-        required
-      />
-      <button type="submit">Add Mood</button>
-    </form>
+      <div class="emojiContainer">
+        <label>
+          <input type="radio" name="mood" value="happy" class="moodOption" />
+          <div class="emoji">😊</div>
+        </label>
+        <label>
+          <input type="radio" name="mood" value="sad" class="moodOption" />
+          <div class="emoji">😞</div>
+        </label>
+        <label>
+          <input type="radio" name="mood" value="neutral" class="moodOption" />
+          <div class="emoji">😐</div>
+        </label>
+        <label>
+          <input type="radio" name="mood" value="excited" class="moodOption" />
+          <div class="emoji">😄</div>
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="mood"
+            value="surprised"
+            class="moodOption"
+          />
+          <div class="emoji">😲</div>
+        </label>
+      </div>
+      <form method="POST" action="/mood">
+        <input
+          type="number"
+          name="happy_mood"
+          placeholder="Happy Mood (1 or 0)"
+          required
+        />
+        <input
+          type="number"
+          name="sad_mood"
+          placeholder="Sad Mood (1 or 0)"
+          required
+        />
+        <input
+          type="number"
+          name="neutral_mood"
+          placeholder="Neutral Mood (1 or 0)"
+          required
+        />
+        <input
+          type="number"
+          name="weekend"
+          placeholder="Weekend (1 or 0)"
+          required
+        />
+        <input
+          type="number"
+          name="hours_of_sleep"
+          placeholder="Hours of Sleep"
+          required
+        />
+        <button type="submit">Add Mood</button>
+      </form>
 
-    <!-- Display predicted mental state -->
-    <h2 class="predictedMental">
-      Your Predicted Mental State: {{ prediction_result }}
-    </h2>
-  </form>
+      <!-- Display predicted mental state -->
+      <h2 class="predictedMental">
+        Your Predicted Mental State: {{ prediction_result }}
+      </h2>
+    </form>
+  </div>
 </div>
 {% endblock %}

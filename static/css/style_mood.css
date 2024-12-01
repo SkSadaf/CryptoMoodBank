@@ -1,8 +1,11 @@
 body {
   background-image: url("https://media.discordapp.net/attachments/1311355898760921101/1312771869853880421/preview.png?ex=674db593&is=674c6413&hm=2de762b9423e65235be101a3dce72bba080118e1e6150d0a3c6aa069d13aac82&=&format=webp&quality=lossless&width=701&height=701");
 }
-
 .moodContainer {
+  margin: 80px;
+  min-width: 100vh;
+}
+.moodWarpper {
   max-width: 900px;
   margin: 80px auto 20px auto;
   padding: 20px;
