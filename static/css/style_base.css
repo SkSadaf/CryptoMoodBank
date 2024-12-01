@@ -1,13 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Bungee+Spice&family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jaro:opsz@6..72&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Wet+Paint&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
   background-color: #1b3a4b;
 }
-
 /* Nav-bar */
 
 nav {
@@ -37,7 +39,7 @@ nav {
   background-color: #6c63ff;
   border-radius: 50px;
   bottom: 10px;
-  left: 16px;
+  left: 12px;
   transition: width 0.3s ease-in-out;
 }
 .navLink:hover::before {

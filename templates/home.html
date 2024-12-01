@@ -8,10 +8,9 @@
   /> -->
   <link rel="stylesheet" href="/static/css/style_home.css" />
 </head>
-{% extends "base.html" %} {% block content %}
-
+{% extends "base.html" %} {% block content %} {% if 'user_id' not in session %}
 <h1 class="login"><a href="/login">LOG IN</a></h1>
-
+{% endif %}
 <header class="hero">
   <div class="video-background">
     <video autoplay muted loop>

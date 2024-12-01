@@ -8,6 +8,30 @@ html {
   background-color: #1b3a4b;
 }
 
+.login {
+  font-size: 1.3em;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 5px;
+  color: #fff;
+  background-color: blue;
+  padding: 10px 18px;
+  position: fixed;
+  bottom: 8rem;
+  right: 0;
+  z-index: 99999;
+  border: 2px solid #fff;
+  animation: fadeIn 2s ease;
+}
+.login a {
+  text-decoration: none;
+  color: inherit;
+}
+.login:hover {
+  background-color: #0000ab;
+}
+
 .sec-1 {
   margin-top: 58px;
   position: relative;
@@ -46,6 +70,7 @@ html {
   font-size: 39px;
   font-weight: 600;
   font-family: "Monoton";
+  animation: fadeIn 2s ease;
 }
 .p1 {
   line-height: normal;
@@ -53,20 +78,24 @@ html {
   color: white;
   font-size: 20px;
   font-family: "Roboto";
+  animation: fadeIn 2s ease;
 }
 .cardsWarpper {
   background-color: #1b3a4b;
   text-align: center;
+  animation: fadeIn 2s ease;
 }
 hr {
   color: #deab5f;
   width: 600px;
   margin: 3em auto;
+  animation: fadeIn 2s ease;
 }
 .card1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  animation: fadeIn 2s ease;
 }
 .card1Text {
   padding: 15px;
@@ -74,6 +103,7 @@ hr {
   background-color: #006466;
   width: 30em;
   margin-top: 3em;
+  animation: fadeIn 2s ease;
   transition: 0.35s;
 }
 
@@ -93,6 +123,7 @@ hr {
 }
 .card1Img {
   margin-top: 1em;
+  animation: fadeIn 2s ease;
 }
 .img1 {
   height: 200px;
@@ -107,4 +138,14 @@ hr {
 }
 svg {
   margin: 20px 10px 0 10px;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

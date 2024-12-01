@@ -12,6 +12,7 @@
   right: 0;
   z-index: 99999;
   border: 2px solid #fff;
+  animation: fadeIn 2s ease;
 }
 .login a {
   text-decoration: none;
@@ -33,6 +34,7 @@
   text-align: center;
   color: #fff;
   overflow: hidden;
+  animation: fadeIn 2s ease;
 }
 
 .scrollContainer {
