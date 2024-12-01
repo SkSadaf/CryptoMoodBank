@@ -5,6 +5,7 @@ body {
 }
 .dashboardContainer {
   margin-top: 58px;
+  min-height: 100vh;
 }
 .dashboard-header {
   line-height: 60px;
