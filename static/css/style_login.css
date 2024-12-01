@@ -28,15 +28,20 @@
   font-size: 35px;
   padding-left: 11px;
 }
-.forgotPassword {
+.registerContainer {
   margin: 0;
   padding: 0;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 16px;
   text-decoration: none;
   justify-self: left;
   padding-left: 1em;
   text-align: start;
+}
+.register {
+  color: inherit;
+  font-size: inherit;
+  font-weight: bold;
 }
 .emailText,
 .passwordText {
