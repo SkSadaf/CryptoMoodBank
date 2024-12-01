@@ -13,18 +13,26 @@ body {
 /* Nav-bar */
 
 nav {
-  display: flex;
-  justify-content: space-around;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 1000;
-  align-items: center;
   color: #fff;
   font-family: sans-serif;
-  padding: 15px 0px;
+  padding: 15px 10px;
   background-color: #100e0f;
   border: 5px;
+}
+
+#big-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#short-menu > li a {
+  display: flex;
+  justify-content: center;
 }
 
 .navLinkContainer {
@@ -94,4 +102,49 @@ footer {
     scrollbar-width: 10px;
     scrollbar-color: #21d4fd transparent;
   }
+}
+
+#short-menu-button {
+  /* background-color: transparent; */
+  all: unset;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  nav ul {
+    display: none;
+  }
+
+  #short-menu-button {
+    /* background-color: transparent; */
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  #short-menu-button {
+    /* background-color: transparent; */
+    display: none;
+  }
+
+  #short-menu {
+    /* background-color: transparent; */
+    display: none !important;
+  }
+}
+
+#short-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  height: 2.5px;
+  width: 35px;
+  background-color: white;
+  margin: 9px 0;
+}
+
+.hidden {
+  display: none !important;
 }

@@ -11,8 +11,30 @@
   </head>
   <body>
     <nav>
-      <h1 class="logo">CryptoMoodBank</h1>
-      <ul>
+      <div id="big-nav">
+        <h1 class="logo">CryptoMoodBank</h1>
+        <ul>
+          <li class="navLinkContainer">
+            <a class="navLink" class="active" href="/">Home</a>
+          </li>
+          <li class="navLinkContainer">
+            <a class="navLink" href="/mood">Mood</a>
+          </li>
+          <li class="navLinkContainer">
+            <a class="navLink" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="navLinkContainer">
+            <a class="navLink" href="/about">About</a>
+          </li>
+        </ul>
+        <button id="short-menu-button" onclick="toggleModal()">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </button>
+      </div>
+
+      <ul id="short-menu" class="hidden">
         <li class="navLinkContainer">
           <a class="navLink" class="active" href="/">Home</a>
         </li>
@@ -33,5 +55,12 @@
       <a href="/privacy">Privacy Policy</a> |
       <a href="/terms">Terms of Service</a>
     </footer>
+
+    <script>
+      const shortMenu = document.getElementById("short-menu");
+      function toggleModal() {
+        shortMenu.classList.toggle("hidden");
+      }
+    </script>
   </body>
 </html>
