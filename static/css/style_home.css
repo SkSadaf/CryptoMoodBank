@@ -169,7 +169,7 @@ section {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   color: #956afa;
   text-transform: uppercase;
@@ -178,7 +178,7 @@ h2 {
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #d1d1d1;
   line-height: 1.8;
   max-width: 800px;
@@ -207,9 +207,11 @@ p {
   margin: 2em;
   background-color: #006466;
 }
-
+.testimonials h2 {
+  font-size: 2.3rem;
+}
 blockquote {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 20px auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -219,12 +221,6 @@ blockquote {
   color: #f1f1f1;
   border-radius: 8px;
 }
-
-blockquote p {
-  font-style: normal;
-  font-size: 1.1rem;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
