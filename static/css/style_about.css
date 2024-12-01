@@ -5,7 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Allura&family=Bungee+Spice&family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jaro:opsz@6..72&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Wet+Paint&display=swap");
 
 html {
-  background-color: #2b2b2b;
+  background-color: #1b3a4b;
 }
 
 .sec-1 {
@@ -55,8 +55,7 @@ html {
   font-family: "Roboto";
 }
 .cardsWarpper {
-  background-color: #2b2b2b;
-  /* height: 1000px; */
+  background-color: #1b3a4b;
   text-align: center;
 }
 hr {
@@ -70,14 +69,23 @@ hr {
   justify-content: space-around;
 }
 .card1Text {
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #006466;
   width: 30em;
   margin-top: 3em;
+  transition: 0.35s;
 }
+
+.card1Text:hover {
+  transform: scale(1.05);
+}
+
 .head02 {
+  text-decoration: underline;
   font-family: "Jaro", sans-serif;
-  /* font-family: "Bungee Spice", sans-serif; */
   font-size: 44px;
-  color: #fff;
+  color: blueviolet;
 }
 .p2 {
   padding-top: 30px;
