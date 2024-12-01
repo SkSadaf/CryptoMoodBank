@@ -73,7 +73,7 @@ The frontend combines HTML, CSS, and JavaScript to provide a seamless, user-frie
 
 Maybe List your names below or username / link to you devpost
 
-- Gajula Sharvan - mani1509
+- Gajula Sharvan
 - Chidinma Igwegbe
 - Deborah Ama
 - Christian Blanquera
