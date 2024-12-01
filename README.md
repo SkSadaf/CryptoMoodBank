@@ -46,25 +46,25 @@ The frontend combines HTML, CSS, and JavaScript to provide a seamless, user-frie
 
 ## Challenges We Ran Into
 
--  API Integration: Ensuring accurate and efficient mood analysis.
+   API Integration: Ensuring accurate and efficient mood analysis.
    Gamification Logic: Designing an engaging and fair reward system.
    Time Constraints: Balancing feature implementation within the hackathon timeframe.
 
 ## Accomplishments That We're Proud Of
 
-- Successfully integrating AI for real-time mood tracking.
+   Successfully integrating AI for real-time mood tracking.
    Creating a gamified platform that blends emotional wellness with cryptocurrency.
    Delivering an intuitive and visually appealing user interface.
 
 ## What We Learned
 
-- How to effectively combine APIs for advanced functionality.
+   How to effectively combine APIs for advanced functionality.
   The importance of gamification in user engagement.
   Teamwork and time management in a high-pressure environment.
 
 ## What's Next for CryptoMoodBank
 
- - Introducing personalized recommendations for emotional growth.
+   Introducing personalized recommendations for emotional growth.
    Expanding Aura Coin utilities, including external partnerships.
    Enhancing analytics for deeper emotional insights.
 
