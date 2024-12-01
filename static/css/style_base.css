@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+body {
+  background-color: #1b3a4b;
+}
+
 /* Nav-bar */
 
 nav {
@@ -41,10 +45,35 @@ nav {
 /* footer */
 
 footer {
+  border-top: 2px solid #000;
   text-align: center;
   background-color: #2b2b2b;
   padding: 1rem 0;
 }
 .copyText {
   color: #fff;
+}
+
+/* Scroll Bar */
+
+/* For (Chrome, Edge, etc.) */
+@supports (--css: variables) {
+  ::-webkit-scrollbar {
+    background-color: transparent;
+    width: 3px;
+  }
+  ::-webkit-scrollbar:hover {
+    width: 7px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(#21d4fd, #b721ff);
+  }
+}
+/* For Firefox */
+@supports (-moz-appearance: none) {
+  html {
+    scrollbar-width: 10px;
+    scrollbar-color: #21d4fd transparent;
+  }
 }
