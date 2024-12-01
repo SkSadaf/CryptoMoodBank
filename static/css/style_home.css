@@ -2,6 +2,49 @@ html {
   width: 100vw;
   overflow-x: hidden;
 }
+body {
+  cursor: none;
+}
+.cursor1,
+.cursor2 {
+  height: 35px;
+  width: 35px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border: 2px solid #003cff;
+  background-color: rgb(173, 216, 230);
+  border-radius: 50%;
+  pointer-events: none;
+  cursor: none;
+  transform: translate(-50%, -50%);
+  transition: 0.1s ease-out, background-color 0.2s, border-color 0.2s,
+    opacity 0.5s ease;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  -webkit-backdrop-filter: grayscale(0.1);
+  backdrop-filter: grayscale(0.1);
+  opacity: 0;
+}
+.cursor2 {
+  background-color: #fff;
+  border: none;
+  height: 6px;
+  width: 6px;
+  transition: 0s;
+}
+
+.cursor1.active {
+  transition: 0.1s;
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: orange;
+}
+a:hover,
+button:hover,
+input:hover,
+.cursor1 {
+  cursor: none;
+}
 
 .login {
   font-size: 1.3em;
