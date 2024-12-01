@@ -41,7 +41,7 @@ nav {
   transition: width 0.3s ease-in-out;
 }
 .navLink:hover::before {
-  width: 100%;
+  width: 70%;
 }
 .navLink {
   color: #fff;
