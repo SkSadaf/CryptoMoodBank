@@ -220,6 +220,7 @@ blockquote {
   max-width: 600px;
   color: #f1f1f1;
   border-radius: 8px;
+  animation: fadeIn 2s ease;
 }
 @keyframes fadeIn {
   0% {
