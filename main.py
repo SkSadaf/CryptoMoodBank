@@ -158,6 +158,26 @@ def signup():
     
     return render_template("signup.html", data="")
 
+@app.route('/dashboard')
+def dashboard():
+    user_id = session.get('user_id')
+    if user_id is None:
+        return redirect(url_for('login'))
+
+    current_user = User.query.get(user_id)
+    moods = Mood.query.filter_by(user_id=user_id).order_by(Mood.date.desc()).all()
+    total_rewards = sum(m.reward for m in moods)
+    prediction_result = session.get('prediction_result', None)
+
+    return render_template(
+        "dashboard.html",
+        current_user=current_user,
+        moods=moods,
+        total_rewards=total_rewards,
+        prediction_result=prediction_result,
+    )
+
+
 # Route for about page
 @app.route('/about')
 def about():
