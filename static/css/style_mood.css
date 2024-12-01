@@ -3,7 +3,7 @@ body {
 }
 .moodContainer {
   margin: 80px;
-  min-width: 100vh;
+  min-height: 100vh;
 }
 .moodWarpper {
   max-width: 900px;
