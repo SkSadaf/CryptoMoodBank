@@ -12,6 +12,7 @@ body {
   color: #6c63ff;
   padding: 1rem;
   text-align: center;
+  animation: fadeIn 2s ease;
 }
 .logout-btn:hover {
   background-color: rgb(0, 0, 168);
@@ -23,13 +24,16 @@ body {
   color: white;
   text-decoration: none;
   margin-left: 20px;
+  animation: fadeIn 2s ease;
 }
 .stats h2 {
   color: #fff;
+  animation: fadeIn 2s ease;
 }
 .stats h3 {
   color: #6c63ff;
   text-decoration: underline;
+  animation: fadeIn 2s ease;
 }
 .stats {
   padding: 2rem;
@@ -39,6 +43,7 @@ body {
   box-shadow: 0 0 10px #000;
   margin: 1rem;
   border-radius: 8px;
+  animation: fadeIn 2s ease;
 }
 
 .stats-grid {
@@ -52,6 +57,7 @@ body {
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
+  animation: fadeIn 2s ease;
 }
 
 .mood-history {
@@ -63,18 +69,31 @@ body {
   box-shadow: 0 0 10px #000;
   margin: 1rem;
   border-radius: 8px;
+  animation: fadeIn 2s ease;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
+  background-color: #e8e8ff;
 }
 
 table th,
 table td {
-  color: #e8e8ff;
-  border: 1px solid #ddd;
+  border: 2px solid #ababab;
+  color: #000;
   padding: 0.8rem;
   text-align: center;
+  animation: fadeIn 2s ease;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
