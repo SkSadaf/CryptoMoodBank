@@ -61,6 +61,36 @@
       function toggleModal() {
         shortMenu.classList.toggle("hidden");
       }
+      const cursor1 = document.querySelector(".cursor1");
+      const cursor2 = document.querySelector(".cursor2");
+      const hovElements = document.querySelectorAll(".hov");
+
+      let cursorTimeout;
+
+      document.addEventListener("mousemove", (e) => {
+        cursor1.style.opacity = "1";
+        cursor2.style.opacity = "1";
+
+        cursor1.style.left = cursor2.style.left = e.clientX + "px";
+        cursor1.style.top = cursor2.style.top = e.clientY + "px";
+
+        clearTimeout(cursorTimeout);
+
+        cursorTimeout = setTimeout(() => {
+          cursor1.style.opacity = "0";
+          cursor2.style.opacity = "0";
+        }, 3500);
+      });
+
+      hovElements.forEach((hov) => {
+        hov.addEventListener("mouseover", () => {
+          cursor1.classList.add("active");
+        });
+
+        hov.addEventListener("mouseout", () => {
+          cursor1.classList.remove("active");
+        });
+      });
     </script>
   </body>
 </html>
