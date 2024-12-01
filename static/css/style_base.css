@@ -26,20 +26,34 @@ nav {
 }
 
 .navLinkContainer {
-  display: inline;
+  display: inline-block;
   list-style: none;
 }
-
+.navLink::before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 4px;
+  background-color: #6c63ff;
+  border-radius: 50px;
+  bottom: 10px;
+  left: 16px;
+  transition: width 0.3s ease-in-out;
+}
+.navLink:hover::before {
+  width: 100%;
+}
 .navLink {
   color: #fff;
   text-decoration: none;
   margin-left: 40px;
+  position: relative;
   padding: 12px 16px;
 }
 
 .navLink:hover {
-  background-color: #333;
-  border-radius: 25px;
+  /* background-color: #333;
+  border-radius: 25px; */
 }
 
 /* footer */
