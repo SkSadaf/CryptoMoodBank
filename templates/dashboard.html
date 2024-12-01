@@ -1,0 +1,58 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CryptoMoodBank Dashboard</title>
+  <link rel="stylesheet" href="/static/css/dashboard.css" />
+</head>
+
+{% extends "base.html" %} {% block content %}
+
+<div class="dashboardContainer">
+  <header class="dashboard-header">
+    <h1>Welcome, {{ current_user.username }}!</h1>
+    <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+  </header>
+
+  <section class="stats">
+    <h2>Your Stats</h2>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>Total Rewards</h3>
+        <p>{{ total_rewards }} Aura Coins</p>
+      </div>
+      <div class="stat-item">
+        <h3>Moods Tracked</h3>
+        <p>{{ moods|length }}</p>
+      </div>
+      <div class="stat-item">
+        <h3>Latest Prediction</h3>
+        <p>{{ prediction_result if prediction_result else "No Data Yet" }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mood-history">
+    <h2>Mood History</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Mood</th>
+          <th>Reward</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for mood in moods %}
+        <tr>
+          <td>{{ mood.date.strftime('%Y-%m-%d') }}</td>
+          <td>{{ mood.mood }}</td>
+          <td>{{ mood.reward }}</td>
+          <td>{{ mood.score }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+</div>
+{% endblock %}
