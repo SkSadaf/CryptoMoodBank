@@ -1,5 +1,5 @@
 body {
-  background-image: url("https://res.cloudinary.com/dg0u5ptwr/image/upload/v1730976700/c1xkmjvt7zkmihihjga0.jpg");
+  background-image: url("https://img.freepik.com/free-vector/gradient-network-connection-background_23-2148886027.jpg?semt=ais_hybrid");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -10,7 +10,7 @@ body {
 .dashboard-header {
   line-height: 60px;
   background: transparent;
-  color: #6c63ff;
+  color: #fff;
   padding: 1rem;
   text-align: center;
   animation: fadeIn 2s ease;

@@ -1,13 +1,16 @@
 body {
-  background-image: url("https://media.discordapp.net/attachments/1311355898760921101/1312771869853880421/preview.png?ex=674db593&is=674c6413&hm=2de762b9423e65235be101a3dce72bba080118e1e6150d0a3c6aa069d13aac82&=&format=webp&quality=lossless&width=701&height=701");
+  background-image: url("https://media.discordapp.net/attachments/1311355898760921101/1312823259515060244/Untitled_design.png?ex=674de570&is=674c93f0&hm=fb68aed9bf54c3b7b95aaac6ba12507ad7815e286feabba4f542bc84fb857d45&=&format=webp&quality=lossless&width=756&height=424");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .moodContainer {
-  margin: 80px;
+  margin-top: 80px;
   min-height: 100vh;
 }
 .moodWarpper {
   max-width: 900px;
-  margin: 80px auto 20px auto;
+  margin: 0 auto;
   padding: 20px;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(10px);
