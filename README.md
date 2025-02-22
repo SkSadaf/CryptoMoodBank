@@ -7,6 +7,7 @@
 # Video
 
 - https://youtube.com/shorts/xEN_Veegwhk?feature=share
+- https://youtu.be/blTrD2E5C9Q?si=15NYlXKWrfMHCdL0
 
 ## What it does
 
